@@ -1,0 +1,180 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_de534/fast && /usr/bin/make  -f CMakeFiles/cmTC_de534.dir/build.make CMakeFiles/cmTC_de534.dir/build
+make[1]: Entering directory '/workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_de534.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_de534.dir/src.c.o -c /workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_de534
+/opt/anaconda/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_de534.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_de534.dir/src.c.o -o cmTC_de534 
+/home/linuxbrew/.linuxbrew/bin/ld: CMakeFiles/cmTC_de534.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/home/linuxbrew/.linuxbrew/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/home/linuxbrew/.linuxbrew/bin/ld: src.c:(.text+0x5e): undefined reference to `pthread_cancel'
+/home/linuxbrew/.linuxbrew/bin/ld: src.c:(.text+0x6f): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_de534.dir/build.make:99: cmTC_de534] Error 1
+make[1]: Leaving directory '/workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_de534/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_4065c/fast && /usr/bin/make  -f CMakeFiles/cmTC_4065c.dir/build.make CMakeFiles/cmTC_4065c.dir/build
+make[1]: Entering directory '/workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4065c.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_4065c.dir/CheckFunctionExists.c.o -c /opt/anaconda/lib/python3.8/site-packages/cmake/data/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4065c
+/opt/anaconda/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4065c.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_4065c.dir/CheckFunctionExists.c.o -o cmTC_4065c  -lpthreads 
+/home/linuxbrew/.linuxbrew/bin/ld: cannot find -lpthreads: No such file or directory
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_4065c.dir/build.make:99: cmTC_4065c] Error 1
+make[1]: Leaving directory '/workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_4065c/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_f5a28/fast && /usr/bin/make  -f CMakeFiles/cmTC_f5a28.dir/build.make CMakeFiles/cmTC_f5a28.dir/build
+make[1]: Entering directory '/workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f5a28.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_f5a28.dir/src.c.o -c /workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_f5a28
+/opt/anaconda/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5a28.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_f5a28.dir/src.c.o -o cmTC_f5a28 
+/home/linuxbrew/.linuxbrew/bin/ld: CMakeFiles/cmTC_f5a28.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/home/linuxbrew/.linuxbrew/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/home/linuxbrew/.linuxbrew/bin/ld: src.c:(.text+0x5e): undefined reference to `pthread_cancel'
+/home/linuxbrew/.linuxbrew/bin/ld: src.c:(.text+0x6f): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_f5a28.dir/build.make:99: cmTC_f5a28] Error 1
+make[1]: Leaving directory '/workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_f5a28/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_f642a/fast && /usr/bin/make  -f CMakeFiles/cmTC_f642a.dir/build.make CMakeFiles/cmTC_f642a.dir/build
+make[1]: Entering directory '/workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f642a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_f642a.dir/CheckFunctionExists.c.o -c /opt/anaconda/lib/python3.8/site-packages/cmake/data/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f642a
+/opt/anaconda/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f642a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_f642a.dir/CheckFunctionExists.c.o -o cmTC_f642a  -lpthreads 
+/home/linuxbrew/.linuxbrew/bin/ld: cannot find -lpthreads: No such file or directory
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_f642a.dir/build.make:99: cmTC_f642a] Error 1
+make[1]: Leaving directory '/workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_f642a/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_d2b5d/fast && /usr/bin/make  -f CMakeFiles/cmTC_d2b5d.dir/build.make CMakeFiles/cmTC_d2b5d.dir/build
+make[1]: Entering directory '/workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d2b5d.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_d2b5d.dir/src.c.o -c /workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_d2b5d
+/opt/anaconda/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d2b5d.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_d2b5d.dir/src.c.o -o cmTC_d2b5d 
+/home/linuxbrew/.linuxbrew/bin/ld: CMakeFiles/cmTC_d2b5d.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/home/linuxbrew/.linuxbrew/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/home/linuxbrew/.linuxbrew/bin/ld: src.c:(.text+0x5e): undefined reference to `pthread_cancel'
+/home/linuxbrew/.linuxbrew/bin/ld: src.c:(.text+0x6f): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_d2b5d.dir/build.make:99: cmTC_d2b5d] Error 1
+make[1]: Leaving directory '/workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_d2b5d/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_8d635/fast && /usr/bin/make  -f CMakeFiles/cmTC_8d635.dir/build.make CMakeFiles/cmTC_8d635.dir/build
+make[1]: Entering directory '/workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8d635.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_8d635.dir/CheckFunctionExists.c.o -c /opt/anaconda/lib/python3.8/site-packages/cmake/data/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8d635
+/opt/anaconda/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d635.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_8d635.dir/CheckFunctionExists.c.o -o cmTC_8d635  -lpthreads 
+/home/linuxbrew/.linuxbrew/bin/ld: cannot find -lpthreads: No such file or directory
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_8d635.dir/build.make:99: cmTC_8d635] Error 1
+make[1]: Leaving directory '/workspace/study/code/repo/pytorch.cpp/example/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_8d635/fast] Error 2
+
+
+
